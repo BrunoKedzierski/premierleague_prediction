@@ -15,7 +15,7 @@ class ModelHandler:
         self.model_artifact =  None
 
     def load_models(self):
-        self.loaded_model = pickle.load(open('model\\xgboost_model.pkl', 'rb'))
+        self.loaded_model = pickle.load(open('model\\model.pkl', 'rb'))
         self.loaded_encoder =pickle.load(open('model\\encoder.pkl', 'rb'))
 
 app = FastAPI()
@@ -62,7 +62,6 @@ def predict_client(data: Football_Game):
 
     data_encoded = pd.concat([dframe.drop(columns=['HomeTeam', 'AwayTeam', 'HTR']), data_encoded], axis=1)
 
-    print("After concat")
     
 
     prediction = model_handler.loaded_model.predict(data_encoded)

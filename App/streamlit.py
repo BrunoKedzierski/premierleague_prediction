@@ -46,7 +46,7 @@ def main():
     col1, col2, col3, col4, col5 = st.columns([6, 2, 4,2, 6])
 
     with col1:
-        st.write("#### [Home Team:]")
+        st.write("#### [Home Team:")
         team_h = st.selectbox("Team 1", teams, key="team1")  # Replace with actual team names
         half_goals_h = st.number_input("Half Time Goals", min_value=0, step=1, value=0, key="half_goals_h")
         half_shots_h = st.number_input("Half Time Shots", min_value=0, step=1, value=0, key="half_shots_h")
